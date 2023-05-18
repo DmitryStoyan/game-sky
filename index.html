@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Sky</title>
+  </head>
+  <body>
+    <section class="game">
+      <div class="main-menu">
+        <button class="main-menu__start-button">Начать игру</button>
+        <div class="main-menu__instructions">
+          <h4 class="instructions__header">Инструкции к игре</h4>
+          <ul class="instructions__list">
+            <li class="instruciton__item">
+              Нажимайте WASD, чтобы управлять самолетом
+            </li>
+            <li class="instruciton__item">
+              Избегайте птиц, чтобы не разбиться
+            </li>
+            <li class="instruciton__item">
+              Собирайте звездочки, чтобы пополнить топливо
+            </li>
+            <li class="instruciton__item">
+              Собирайте парашюты, что бы спасать жизни
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="gaming-environment hidden">
+        <div class="environment__menu">
+          <ul class="menu__stats-list">
+            <li class="stats__item timer">00:00</li>
+            <li class="stats__item fuel">99</li>
+            <li class="stats__item stars">0</li>
+          </ul>
+          <ul class="menu__options-list">
+            <li class="options__item">
+              <p class="options__description">Пауза</p>
+              <button
+                class="options__button pause__button"
+                aria-label="Пауза/возобновить"
+              ></button>
+            </li>
+            <li class="options__item">
+              <p class="options__description">Звук</p>
+              <button
+                class="options__button sound__button"
+                aria-label="Включить/выключить звук"
+              ></button>
+              <span id="player-name" class="player-name"></span>
+            </li>
+          </ul>
+        </div>
+        <canvas class="environment__playground"></canvas>
+      </div>
+    </section>
+
+    <div id="leaderboard_over" class="finish-popup hidden">
+      <h2 class="finish__header">Таблица рекордов</h2>
+      <table id="leaderboard-table" class="finish__list">
+        <thead>
+          <tr>
+            <th class="finish__item" data-type="name">Имя</th>
+            <th class="finish__item" data-type="time">Время</th>
+            <th class="finish__item" data-type="stars">Спасенные жизни</th>
+          </tr>
+        </thead>
+        <tbody id="leaderboard-body"></tbody>
+      </table>
+      <button class="finish__button">Попробовать ещё раз</button>
+    </div>
+
+    <script src="js/classes.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
